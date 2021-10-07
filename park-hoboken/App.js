@@ -7,6 +7,7 @@ import { Button,
   StyleSheet,
   TouchableOpacity,
   Image,
+  ScrollView
  } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -59,6 +60,42 @@ function DetailsScreen() {
   );
 }
 
+function ProfileScreen() {
+  const [password, changePassword] = useState('');
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Image 
+        style={{width: 100, height: 100}}
+        source={require('./assets/profile_pic1.png')} />
+
+      <View style={styles.inputView}>
+        <TextInput
+          placeholder="Change Password"
+          placeholderTextColor="#003f5c"
+          onChangeText={(password) => changePassword(password)}
+        />
+      </View>
+
+      <Text>Previous Trips:</Text>
+      <View style={{ flex: 1, alignItems: 'left', justifyContent: 'center', borderColor:'gray', borderWidth:3}}>
+          <ScrollView>       
+              <Text>
+                8th and Wash{"\n"}
+                9th and Hudson{"\n"}
+                2nd and Court{"\n"}
+                1st and Park{"\n"}
+                3rd and Willow{"\n"}
+              </Text>      
+          </ScrollView>
+      </View>
+      <View>
+        <Button title="Current Rewards" />
+      </View>
+
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   inputView: {
     backgroundColor: "white",
@@ -101,6 +138,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="ParkHoboken" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
