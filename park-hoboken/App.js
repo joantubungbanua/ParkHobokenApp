@@ -152,6 +152,9 @@ function ProfileScreen() {
       <View>
         <Button title="Current Rewards" />
       </View>
+    </View>
+  );
+}
 
 function SelectionScreen({ navigation }) {
   return (
