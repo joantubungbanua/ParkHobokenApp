@@ -1,22 +1,26 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Button, 
-  View, 
-  Text, 
-  TextInput, 
+import {
+  Button,
+  View,
+  Text,
+  TextInput,
   StyleSheet,
   TouchableOpacity,
   Image,
-  ScrollView
- } from 'react-native';
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function HomeScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
+
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Image style={{ width: 300, height: 100 }} source={require('./assets/ParkHoboken.png')}>
+      </Image>
       <View style={styles.inputView}>
         <TextInput
           placeholder="Email."
@@ -24,7 +28,7 @@ function HomeScreen({ navigation }) {
           onChangeText={(email) => setEmail(email)}
         />
       </View>
-      
+
       <View style={styles.inputView}>
         <TextInput
           placeholder="Password."
@@ -41,7 +45,7 @@ function HomeScreen({ navigation }) {
 
       <Button
         title="New to ParkHoboken? Create an account."
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Departing')}
       />
 
       <TouchableOpacity>
@@ -149,6 +153,40 @@ function ProfileScreen() {
         <Button title="Current Rewards" />
       </View>
 
+function SelectionScreen({ navigation }) {
+  return (
+    <View>
+      <View style = {{ marginVertical : 60, flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
+        <Text>New Trip</Text>
+      </View>
+    <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Welcome to the Selection Screen!</Text>
+      <View style={{ flexDirection:"row", marginVertical : 30  }}>
+        <View style={{ marginHorizontal: 10 }}>
+          <Button
+            title="Arriver"
+            //onPress={() => navigation.navigate('Details')}
+          />
+        </View>
+        <View style={{ marginHorizontal: 10 }}>
+          <Button
+            title="Departer"
+            //onPress={() => navigation.navigate('Details')}
+          />
+        </View>
+      </View>
+    </View>
+    <View style={{ flexDirection: "row",
+                   position: 'absolute',
+                   left: 5,
+                   top: 5,
+              }} >
+      <View style={{ marginHorizontal: 10 }}>
+      <Icon.Button name = 'bars' size = {30}
+              onPress={() => navigation.navigate('Details')}> </Icon.Button></View>
+        <View style={{ marginHorizontal: 10 }}>
+        <Text>New Trip</Text></View>
+      </View>
     </View>
   );
 }
@@ -162,7 +200,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: "center",
   },
-  
+
   TextInput: {
     height: 50,
     flex: 1,
@@ -176,15 +214,15 @@ const styles = StyleSheet.create({
   },
 
   loginBtn:
- {
-   width:"80%",
-   borderRadius:25,
-   height:50,
-   alignItems:"center",
-   justifyContent:"center",
-   marginTop:40,
-   backgroundColor:"#FF1493",
- }
+  {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#FF1493",
+  }
 });
 
 const Stack = createNativeStackNavigator();
@@ -196,11 +234,11 @@ function App() {
         <Stack.Screen name="ParkHoboken" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Selection" component={SelectionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 
 
 export default App;
