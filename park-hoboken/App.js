@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Button, 
-  View, 
-  Text, 
-  TextInput, 
+import {
+  Button,
+  View,
+  Text,
+  TextInput,
   StyleSheet,
   TouchableOpacity,
   Image,
- } from 'react-native';
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -15,7 +16,10 @@ function HomeScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   return (
+
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Image style={{ width: 300, height: 100 }} source={require('./assets/ParkHoboken.png')}>
+      </Image>
       <View style={styles.inputView}>
         <TextInput
           placeholder="Email."
@@ -23,7 +27,7 @@ function HomeScreen({ navigation }) {
           onChangeText={(email) => setEmail(email)}
         />
       </View>
-      
+
       <View style={styles.inputView}>
         <TextInput
           placeholder="Password."
@@ -40,7 +44,7 @@ function HomeScreen({ navigation }) {
 
       <Button
         title="New to ParkHoboken? Create an account."
-        onPress={() => navigation.navigate('Details')}
+        onPress={() => navigation.navigate('Departing')}
       />
 
       <TouchableOpacity>
@@ -116,6 +120,17 @@ function DetailsScreen({ navigation }) {
   );
 }
 
+function DepartingScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Current Location</Text>
+    </View>
+  );
+}
+
+
+
+
 const styles = StyleSheet.create({
   inputView: {
     backgroundColor: "white",
@@ -125,7 +140,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     alignItems: "center",
   },
-  
+
   TextInput: {
     height: 50,
     flex: 1,
@@ -139,15 +154,15 @@ const styles = StyleSheet.create({
   },
 
   loginBtn:
- {
-   width:"80%",
-   borderRadius:25,
-   height:50,
-   alignItems:"center",
-   justifyContent:"center",
-   marginTop:40,
-   backgroundColor:"#FF1493",
- }
+  {
+    width: "80%",
+    borderRadius: 25,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 40,
+    backgroundColor: "#FF1493",
+  }
 });
 
 const Stack = createNativeStackNavigator();
@@ -158,6 +173,7 @@ function App() {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="ParkHoboken" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Departing" component={DepartingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
