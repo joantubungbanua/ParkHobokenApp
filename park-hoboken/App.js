@@ -45,7 +45,7 @@ function HomeScreen({ navigation }) {
 
       <Button
         title="New to ParkHoboken? Create an account."
-        onPress={() => navigation.navigate('Departing')}
+        onPress={() => navigation.navigate('Selection')}
       />
 
       <TouchableOpacity>
