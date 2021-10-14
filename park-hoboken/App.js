@@ -45,7 +45,7 @@ function HomeScreen({ navigation }) {
 
       <Button
         title="New to ParkHoboken? Create an account."
-        onPress={() => navigation.navigate('Departing')}
+        onPress={() => navigation.navigate('Selection')}
       />
 
       <TouchableOpacity>
@@ -158,9 +158,6 @@ function SelectionScreen({ navigation }) {
     </View>
   );
 }
-
-
-
 
 const styles = StyleSheet.create({
   inputView: {
