@@ -51,6 +51,7 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('Details')}
       /></View>
 
+
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
