@@ -8,6 +8,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  ScrollView
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -38,15 +39,18 @@ function HomeScreen({ navigation }) {
         />
       </View>
 
+      <View style = {{ marginVertical: 10 }}>
       <Button
         title="Login"
-        onPress={() => navigation.navigate('Details')}
-      />
+        onPress={() => navigation.navigate('Profile')}
+      /></View>
 
+      <View style = {{ marginVertical: 10 }}>
       <Button
         title="New to ParkHoboken? Create an account."
-        onPress={() => navigation.navigate('Selection')}
-      />
+        onPress={() => navigation.navigate('Details')}
+      /></View>
+
 
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text>
@@ -115,13 +119,13 @@ function DetailsScreen({ navigation }) {
 
       <Button
       title="Create Account"
-      onPress={() => navigation.navigate('ParkHoboken')}
+      onPress={() => navigation.navigate('Profile')}
       />
     </View>
   );
 }
 
-function ProfileScreen() {
+function ProfileScreen({ navigation }) {
   const [password, changePassword] = useState('');
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -138,7 +142,7 @@ function ProfileScreen() {
       </View>
 
       <Text>Previous Trips:</Text>
-      <View style={{ flex: 1, alignItems: 'left', justifyContent: 'center', borderColor:'gray', borderWidth:3}}>
+      <View style={{ flex: 1, alignItems: 'left', justifyContent: 'center', borderColor:'gray', borderWidth:3, marginVertical : 10}}>
           <ScrollView>       
               <Text>
                 8th and Wash{"\n"}
@@ -149,8 +153,11 @@ function ProfileScreen() {
               </Text>      
           </ScrollView>
       </View>
-      <View>
-        <Button title="Current Rewards" />
+      <View style = {{ marginVertical : 10 }}>
+        <Button title="Current Rewards"/>
+      </View>
+      <View style = {{ marginVertical : 10 }}>
+        <Button title="New Trip" onPress={() => navigation.navigate('Selection')} />
       </View>
     </View>
   );
@@ -159,8 +166,7 @@ function ProfileScreen() {
 function SelectionScreen({ navigation }) {
   return (
     <View>
-      <View style = {{ marginVertical : 60, flex: 1, alignItems: 'center', justifyContent: 'center' }}> 
-        <Text>New Trip</Text>
+      <View style = {{ marginVertical : 60, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       </View>
     <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Welcome to the Selection Screen!</Text>
@@ -184,10 +190,10 @@ function SelectionScreen({ navigation }) {
                    left: 5,
                    top: 5,
               }} >
-      <View style={{ marginHorizontal: 10 }}>
+      <View style={{ marginHorizontal: 10, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Icon.Button name = 'bars' size = {30}
-              onPress={() => navigation.navigate('Details')}> </Icon.Button></View>
-        <View style={{ marginHorizontal: 10 }}>
+              onPress={() => navigation.navigate('Profile')}> </Icon.Button></View>
+      <View style={{ marginHorizontal: 10, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>New Trip</Text></View>
       </View>
     </View>
