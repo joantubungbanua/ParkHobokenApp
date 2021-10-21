@@ -13,6 +13,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import NavigatorScreen from './maps';
 
 function HomeScreen({ navigation }) {
   const [email, setEmail] = useState('');
@@ -174,13 +175,13 @@ function SelectionScreen({ navigation }) {
         <View style={{ marginHorizontal: 10 }}>
           <Button
             title="Arriver"
-            //onPress={() => navigation.navigate('Details')}
+            onPress={() => navigation.navigate('Navigator')}
           />
         </View>
         <View style={{ marginHorizontal: 10 }}>
           <Button
             title="Departer"
-            //onPress={() => navigation.navigate('Details')}
+            onPress={() => navigation.navigate('Navigator')}
           />
         </View>
       </View>
@@ -244,6 +245,7 @@ function App() {
         <Stack.Screen name="Details" component={DetailsScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Selection" component={SelectionScreen} />
+        <Stack.Screen name="Navigator" component={NavigatorScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
