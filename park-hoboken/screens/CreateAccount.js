@@ -71,7 +71,8 @@ function CreateAccountScreen({ navigation }) {
           />
         </View>
   
-        <Button style={styles.button}
+        <Button style={styles.buttonView}
+        color="#A74F49"
         title="Create Account"
         onPress={() => navigation.navigate('Profile')}
         />

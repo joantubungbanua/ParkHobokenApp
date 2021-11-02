@@ -38,18 +38,18 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View style={styles.button}>
-        <Button
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
           title="Login"
           onPress={() => navigation.navigate('Profile')}
         /></View>
   
-        <View style={styles.button}>
-        <Button
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
+        // color="#B26A65"
           title="New to ParkHoboken? Create an account."
           onPress={() => navigation.navigate('CreateAccount')}
         /></View>
-  
   
         <TouchableOpacity>
           <Text>Forgot Password?</Text>

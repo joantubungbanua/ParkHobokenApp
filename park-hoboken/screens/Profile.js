@@ -40,11 +40,11 @@ function ProfileScreen({ navigation }) {
                 </Text>      
             </ScrollView>
         </View>
-        <View style={styles.button}>
-          <Button title="Current Rewards"/>
+        <View style={styles.buttonView}>
+          <Button color="#A74F49" title="Current Rewards"/>
         </View>
-        <View style={styles.button}>
-          <Button title="New Trip" onPress={() => navigation.navigate('Selection')} />
+        <View style={styles.buttonView}>
+          <Button color="#A74F49" title="New Trip" onPress={() => navigation.navigate('Selection')} />
         </View>
       </View>
     );

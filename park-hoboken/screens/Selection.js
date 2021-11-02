@@ -21,14 +21,16 @@ function SelectionScreen({ navigation }) {
       <View style={styles.defaultView}>
         <Text>Welcome to the Selection Screen!</Text>
         <View style={{ flexDirection:"row", marginVertical : 30  }}>
-          <View style={styles.button}>
+          <View style={styles.buttonView}>
             <Button
+              color="#A74F49"
               title="Arriver"
               onPress={() => navigation.navigate('Navigator')}
             />
           </View>
-          <View style={styles.button}>
+          <View style={styles.buttonView}>
             <Button
+              color="#A74F49"
               title="Departer"
               onPress={() => navigation.navigate('Navigator')}
             />
@@ -42,6 +44,7 @@ function SelectionScreen({ navigation }) {
                 }} >
         <View style={{ marginHorizontal: 10, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Icon.Button name = 'bars' size = {30}
+                backgroundColor="#A74F49"
                 onPress={() => navigation.navigate('Profile')}> </Icon.Button></View>
         <View style={{ marginHorizontal: 10, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>New Trip</Text></View>
