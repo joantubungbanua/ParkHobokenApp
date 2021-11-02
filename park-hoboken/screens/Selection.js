@@ -18,16 +18,16 @@ function SelectionScreen({ navigation }) {
       <View style={styles.defaultView}>
         <View style = {{ marginVertical : 60}}>
         </View>
-      <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
         <Text>Welcome to the Selection Screen!</Text>
         <View style={{ flexDirection:"row", marginVertical : 30  }}>
-          <View style={{ marginHorizontal: 10 }}>
+          <View style={styles.button}>
             <Button
               title="Arriver"
               onPress={() => navigation.navigate('Navigator')}
             />
           </View>
-          <View style={{ marginHorizontal: 10 }}>
+          <View style={styles.button}>
             <Button
               title="Departer"
               onPress={() => navigation.navigate('Navigator')}

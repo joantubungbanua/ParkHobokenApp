@@ -21,7 +21,7 @@ function HomeScreen({ navigation }) {
       <View style={styles.defaultView}>
         <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
         </Image>
-        <View>
+        <View style={styles.inputView}>
           <TextInput
             placeholder="Email."
             placeholderTextColor="#003f5c"
@@ -29,7 +29,7 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View>
+        <View style={styles.inputView}>
           <TextInput
             placeholder="Password."
             placeholderTextColor="#003f5c"

@@ -20,7 +20,7 @@ function ProfileScreen({ navigation }) {
           style={{width: 100, height: 100}}
           source={require('../assets/profile_pic1.png')} />
   
-        <View>
+        <View style={styles.inputView}>
           <TextInput
             placeholder="Change Password"
             placeholderTextColor="#003f5c"
@@ -40,10 +40,10 @@ function ProfileScreen({ navigation }) {
                 </Text>      
             </ScrollView>
         </View>
-        <View style = {{ marginVertical : 10 }}>
+        <View style={styles.button}>
           <Button title="Current Rewards"/>
         </View>
-        <View style = {{ marginVertical : 10 }}>
+        <View style={styles.button}>
           <Button title="New Trip" onPress={() => navigation.navigate('Selection')} />
         </View>
       </View>
