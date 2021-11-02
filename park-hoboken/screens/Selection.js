@@ -1,7 +1,10 @@
+// Stylesheet
+import styles from '../stylesheet.js';
+
 function SelectionScreen({ navigation }) {
     return (
-      <View>
-        <View style = {{ marginVertical : 60, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
+        <View style = {{ marginVertical : 60}}>
         </View>
       <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Welcome to the Selection Screen!</Text>

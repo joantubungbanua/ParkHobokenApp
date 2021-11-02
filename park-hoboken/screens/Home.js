@@ -10,14 +10,15 @@ import {
   Image,
   ScrollView
 } from 'react-native';
-// import '../config/styles' as styles;
+// Stylesheet
+import styles from '../stylesheet.js';
 
 function HomeScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     return (
   
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
         <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
         </Image>
         <View style={styles.inputView}>
@@ -37,13 +38,13 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View style = {{ marginVertical: 10 }}>
+        <View style={styles.button, styles.loginBtn}>
         <Button
           title="Login"
           onPress={() => navigation.navigate('Profile')}
         /></View>
   
-        <View style = {{ marginVertical: 10 }}>
+        <View style={styles.button}>
         <Button
           title="New to ParkHoboken? Create an account."
           onPress={() => navigation.navigate('Details')}

@@ -19,7 +19,8 @@ import HomeScreen from './screens/Home';
 import CreateAccountScreen from './screens/CreateAccount';
 import ProfileScreen from './screens/Profile';
 import SelectionScreen from './screens/Selection';
-
+// Stylesheet
+import styles from './stylesheet.js';
 
 const Stack = createNativeStackNavigator();
 
