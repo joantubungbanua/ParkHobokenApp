@@ -1,3 +1,5 @@
+// Stylesheet
+import styles from '../stylesheet.js';
 import * as React from 'react';
 import { useState } from 'react';
 import {
@@ -11,11 +13,10 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 function SelectionScreen({ navigation }) {
     return (
-      <View>
-        <View style = {{ marginVertical : 60, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
+        <View style = {{ marginVertical : 60}}>
         </View>
       <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Welcome to the Selection Screen!</Text>

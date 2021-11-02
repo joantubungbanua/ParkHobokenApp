@@ -10,10 +10,12 @@ import {
   Image,
   ScrollView
 } from 'react-native';
+// Stylesheet
+import styles from '../stylesheet.js';
 
 function CreateAccountScreen({ navigation }) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
         <Text>Enter Profile Details</Text>
         {/* First name */}
         <View>

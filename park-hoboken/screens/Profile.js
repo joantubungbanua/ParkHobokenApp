@@ -9,11 +9,13 @@ import {
   Image,
   ScrollView
 } from 'react-native';
+// Stylesheet
+import styles from '../stylesheet.js';
 
 function ProfileScreen({ navigation }) {
     const [password, changePassword] = useState('');
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.defaultView}>
         <Image 
           style={{width: 100, height: 100}}
           source={require('../assets/profile_pic1.png')} />
