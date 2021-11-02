@@ -38,7 +38,7 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View style={styles.button, styles.loginBtn}>
+        <View style={styles.button}>
         <Button
           title="Login"
           onPress={() => navigation.navigate('Profile')}
