@@ -18,7 +18,7 @@ function CreateAccountScreen({ navigation }) {
       <View style={styles.defaultView}>
         <Text>Enter Profile Details</Text>
         {/* First name */}
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="First Name"
             placeholderTextColor="#003f5c"
@@ -26,21 +26,21 @@ function CreateAccountScreen({ navigation }) {
           />
         </View>
         {/* Car Make/Model/Color */}
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Vehicle Make"
             placeholderTextColor="#003f5c"
             onChangeText={(make) => setFirst_Name(make)}
           />
         </View>
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Vehicle Model"
             placeholderTextColor="#003f5c"
             onChangeText={(model) => setFirst_Name(model)}
           />
         </View>
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Vehicle Color"
             placeholderTextColor="#003f5c"
@@ -48,7 +48,7 @@ function CreateAccountScreen({ navigation }) {
           />
         </View>
         {/* License Plate */}
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="License Plate"
             placeholderTextColor="#003f5c"
@@ -56,14 +56,14 @@ function CreateAccountScreen({ navigation }) {
           />
         </View>
         {/* Email/Password */}
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Email"
             placeholderTextColor="#003f5c"
             onChangeText={(create_email) => setFirst_Name(create_email)}
           />
         </View>
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Password"
             placeholderTextColor="#003f5c"
