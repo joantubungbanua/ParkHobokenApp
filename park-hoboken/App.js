@@ -12,8 +12,7 @@ import {
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import NavigatorScreen from './maps';
+import NavigatorScreen from './screens/maps';
 // Screens
 import HomeScreen from './screens/Home';
 import CreateAccountScreen from './screens/CreateAccount';
@@ -28,7 +27,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="ParkHoboken" component={HomeScreen} />
-        <Stack.Screen name="Create Account" component={CreateAccountScreen} />
+        <Stack.Screen name="CreateAccount" component={CreateAccountScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Selection" component={SelectionScreen} />
         <Stack.Screen name="Navigator" component={NavigatorScreen} />

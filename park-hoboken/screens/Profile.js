@@ -5,7 +5,6 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
   TouchableOpacity,
   Image,
   ScrollView
@@ -19,7 +18,7 @@ function ProfileScreen({ navigation }) {
           style={{width: 100, height: 100}}
           source={require('../assets/profile_pic1.png')} />
   
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Change Password"
             placeholderTextColor="#003f5c"

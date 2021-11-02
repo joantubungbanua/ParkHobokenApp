@@ -20,7 +20,7 @@ function HomeScreen({ navigation }) {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
         </Image>
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Email."
             placeholderTextColor="#003f5c"
@@ -28,7 +28,7 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View style={styles.inputView}>
+        <View>
           <TextInput
             placeholder="Password."
             placeholderTextColor="#003f5c"
@@ -46,12 +46,12 @@ function HomeScreen({ navigation }) {
         <View style = {{ marginVertical: 10 }}>
         <Button
           title="New to ParkHoboken? Create an account."
-          onPress={() => navigation.navigate('Details')}
+          onPress={() => navigation.navigate('CreateAccount')}
         /></View>
   
   
         <TouchableOpacity>
-          <Text style={styles.forgot_button}>Forgot Password?</Text>
+          <Text>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
     );

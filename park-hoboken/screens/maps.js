@@ -24,5 +24,5 @@ class NavigatorScreen extends Component {
     }
   }
 export default GoogleApiWrapper({
-    apiKey: ''
+    apiKey: 'AIzaSyALKxWILdqGOSRkqkw9zMgwvsLR27Xo2Kc'
   })(NavigatorScreen);
