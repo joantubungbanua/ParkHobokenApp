@@ -23,20 +23,23 @@ function CreateAccountScreen({ navigation }) {
 
   const [firstName, setFirst_Name] = useState('')
   const [make, setMake] = useState('')
-  const [model, setModel ] = useState('')
+  const [model, setModel] = useState('')
   const [color, setColor] = useState('')
   const [license, setLicense] = useState('')
   const [email, setEmail] = useState();
   const [password, setPassword] = useState('')
- 
- 
+
+
 
 
 
   const onRegisterPress = () => {
-  
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((response) => {
+
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((response) => {
         const uid = response.user.uid
         const data = {
           id: uid,
@@ -54,7 +57,9 @@ function CreateAccountScreen({ navigation }) {
           .doc(uid)
           .set(data)
           .then(() => {
-            navigation.navigate('Profile', { user: data })
+           
+            navigation.navigate('ParkHoboken', { user: data })
+            console.log('registration success')
           })
           .catch((error) => {
             alert(error)
@@ -88,7 +93,7 @@ function CreateAccountScreen({ navigation }) {
           placeholder="Vehicle Make"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setMake(text)}
-          value = {make}
+          value={make}
         />
       </View>
       <View>
@@ -96,7 +101,7 @@ function CreateAccountScreen({ navigation }) {
           placeholder="Vehicle Model"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setModel(text)}
-          value = {model}
+          value={model}
         />
       </View>
       <View>
@@ -104,7 +109,7 @@ function CreateAccountScreen({ navigation }) {
           placeholder="Vehicle Color"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setColor(text)}
-          value = {color}
+          value={color}
         />
       </View>
       {/* License Plate */}
@@ -113,7 +118,7 @@ function CreateAccountScreen({ navigation }) {
           placeholder="License Plate"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setLicense(text)}
-          value = {license}
+          value={license}
         />
       </View>
       {/* Email/Password */}
@@ -122,8 +127,8 @@ function CreateAccountScreen({ navigation }) {
           placeholder="Email"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setEmail(text)}
-          value = {email}
-      
+          value={email}
+
         />
       </View>
       <View>
@@ -131,7 +136,7 @@ function CreateAccountScreen({ navigation }) {
           placeholder="Password"
           placeholderTextColor="#003f5c"
           onChangeText={(text) => setPassword(text)}
-          value = {password}
+          value={password}
         />
       </View>
 

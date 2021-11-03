@@ -12,10 +12,42 @@ import {
 } from 'react-native';
 // Stylesheet
 import styles from '../stylesheet.js';
+import { firebase } from '../firebase/config';
 
 function HomeScreen({ navigation }) {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onLoginPress = () => { 
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email,password)
+      .then((response) => {
+        const uid = response.user.uid
+        const usersRef = firebase.firestore().collection('users')
+        usersRef
+          .doc(uid)
+          .get()
+          .then(firestoreDocument => {
+            if (!firestoreDocument.exists) {
+              alert("User does not exist anymore!")
+              return;
+            }
+            const user = firestoreDocument.data()
+            navigation.navigate('Profile', {user})
+
+          })
+          .catch(error => {
+            alert(error)
+          });
+
+      })
+      .catch(error => { 
+        alert(error)
+      })
+  }
+
     return (
   
       <View style={styles.defaultView}>
@@ -25,7 +57,8 @@ function HomeScreen({ navigation }) {
           <TextInput
             placeholder="Email."
             placeholderTextColor="#003f5c"
-            onChangeText={(email) => setEmail(email)}
+            onChangeText={(text) => setEmail(text)}
+            value = {email}
           />
         </View>
   
@@ -34,14 +67,14 @@ function HomeScreen({ navigation }) {
             placeholder="Password."
             placeholderTextColor="#003f5c"
             secureTextEntry={true}
-            onChangeText={(password) => setPassword(password)}
+            onChangeText={(text) => setPassword(text)}
           />
         </View>
   
         <View style={styles.button}>
         <Button
           title="Login"
-          onPress={() => navigation.navigate('Profile')}
+          onPress={() => onLoginPress()}
         /></View>
   
         <View style={styles.button}>
