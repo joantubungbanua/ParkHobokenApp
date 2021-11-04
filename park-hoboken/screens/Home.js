@@ -53,7 +53,7 @@ function HomeScreen({ navigation }) {
       <View style={styles.defaultView}>
         <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
         </Image>
-        <View>
+        <View style={styles.inputView}>
           <TextInput
             placeholder="Email."
             placeholderTextColor="#003f5c"
@@ -62,7 +62,7 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View>
+        <View style={styles.inputView}>
           <TextInput
             placeholder="Password."
             placeholderTextColor="#003f5c"
@@ -71,18 +71,18 @@ function HomeScreen({ navigation }) {
           />
         </View>
   
-        <View style={styles.button}>
-        <Button
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
           title="Login"
           onPress={() => onLoginPress()}
         /></View>
   
-        <View style={styles.button}>
-        <Button
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
+        // color="#B26A65"
           title="New to ParkHoboken? Create an account."
           onPress={() => navigation.navigate('CreateAccount')}
         /></View>
-  
   
         <TouchableOpacity>
           <Text>Forgot Password?</Text>

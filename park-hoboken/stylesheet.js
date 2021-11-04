@@ -23,8 +23,12 @@ export default StyleSheet.create({
       marginLeft: 20,
     },
 
-    button: {
+    buttonView: {
       marginVertical: 10,
+    },
+
+    button: {
+      color: "#B26A65",
     },
   
     forgot_button: {
