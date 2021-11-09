@@ -3,7 +3,6 @@ import { useState } from 'react';
 import {
   Button,
   View,
-  Text,
   TextInput,
   StyleSheet,
   TouchableOpacity,
@@ -12,6 +11,8 @@ import {
 } from 'react-native';
 // Stylesheet
 import styles from '../stylesheet.js';
+// Galio
+import { Text } from 'galio-framework'
 
 function HomeScreen({ navigation }) {
     const [email, setEmail] = useState('');
@@ -30,6 +31,10 @@ function HomeScreen({ navigation }) {
         </View>
   
         <View style={styles.inputView}>
+          <Text>
+            Galio framework example of text
+          </Text>
+
           <TextInput
             placeholder="Password."
             placeholderTextColor="#003f5c"
