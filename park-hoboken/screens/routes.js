@@ -45,7 +45,7 @@ class RoutingScreen extends React.Component {
       return (
         // Important! Always set the container height explicitly
           <div style={{ height: '100vh', width: '100%' }}>
-            <GoogleMapReact bootstrapURLKeys={{ key: 'AIzaSyA88ZocwNHIT7ieDwb2wWODQNKtZxC4wZA'}} 
+            <GoogleMapReact bootstrapURLKeys={{ key: ''}} 
               defaultCenter={this.state.center} 
               defaultZoom={this.state.zoom} 
               yesIWantToUseGoogleMapApiInternals 
