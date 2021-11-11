@@ -13,11 +13,13 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NavigatorScreen from './screens/maps';
+import toRoute from './screens/maps';
 // Screens
 import HomeScreen from './screens/Home';
 import CreateAccountScreen from './screens/CreateAccount';
 import ProfileScreen from './screens/Profile';
 import SelectionScreen from './screens/Selection';
+import RoutingScreen from './screens/routes';
 // Stylesheet
 import styles from './stylesheet.js';
 
@@ -32,6 +34,7 @@ function App() {
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Selection" component={SelectionScreen} />
         <Stack.Screen name="Navigator" component={NavigatorScreen} />
+        <Stack.Screen name="Routing" component={RoutingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
