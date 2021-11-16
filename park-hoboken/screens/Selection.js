@@ -35,6 +35,13 @@ function SelectionScreen({ navigation }) {
               onPress={() => navigation.navigate('Navigator')}
             />
           </View>
+          <View style={styles.buttonView}>
+            <Button
+              color="#A74F49"
+              title="Route"
+              onPress={() => navigation.navigate('Routing')}
+            />
+          </View>
         </View>
       </View>
       <View style={{ flexDirection: "row",

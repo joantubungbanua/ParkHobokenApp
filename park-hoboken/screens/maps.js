@@ -11,18 +11,20 @@ class NavigatorScreen extends Component {
       return (
         <Map
           google={this.props.google}
-          zoom={14}
+          zoom={15}
           style={mapStyles}
           initialCenter={
             {
-              lat: -1.2884,
-              lng: 36.8233
+              lat: 40.74453,
+              lng: -74.02577
             }
           }
         />
       );
     }
   }
+
 export default GoogleApiWrapper({
     apiKey: ''
   })(NavigatorScreen);
+

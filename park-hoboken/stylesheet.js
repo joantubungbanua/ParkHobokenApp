@@ -45,5 +45,12 @@ export default StyleSheet.create({
       justifyContent: "center",
       marginTop: 40,
       backgroundColor: "#FF1493",
+    },
+
+    pin:{
+      width: 5,
+      height: 5,
+      borderRadius: 150 / 2,
+      backgroundColor: '#FF00FF',
     }
   });
