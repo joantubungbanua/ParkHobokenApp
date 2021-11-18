@@ -12,6 +12,7 @@ import {
   ScrollView
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import NavOptions from '../components/NavOptions.js';
 
 function SelectionScreen({ navigation }) {
     return (
@@ -25,14 +26,14 @@ function SelectionScreen({ navigation }) {
             <Button
               color="#A74F49"
               title="Arriver"
-              onPress={() => navigation.navigate('Navigator')}
+              onPress={() => navigation.navigate('Map')}
             />
           </View>
           <View style={styles.buttonView}>
             <Button
               color="#A74F49"
               title="Departer"
-              onPress={() => navigation.navigate('Navigator')}
+              onPress={() => navigation.navigate('Map')}
             />
           </View>
           <View style={styles.buttonView}>
@@ -56,6 +57,7 @@ function SelectionScreen({ navigation }) {
         <View style={{ marginHorizontal: 10, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>New Trip</Text></View>
         </View>
+        <NavOptions />
       </View>
     );
   }
