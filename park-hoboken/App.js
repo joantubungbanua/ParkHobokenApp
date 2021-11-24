@@ -20,6 +20,8 @@ import ProfileScreen from './screens/Profile';
 import SelectionScreen from './screens/Selection';
 import RoutingScreen from './screens/routes';
 import MapScreen from './screens/Maps';
+import MatchingScreen from './screens/Matching';
+import TripCompleteScreen from './screens/TripComplete';
 // Stylesheet
 import styles from './stylesheet.js';
 
@@ -40,6 +42,8 @@ function App() {
           <Stack.Screen name="Selection" component={SelectionScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Routing" component={RoutingScreen} />
+          <Stack.Screen name="Matching" component={MatchingScreen} />
+          <Stack.Screen name="TripComplete" component={TripCompleteScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
