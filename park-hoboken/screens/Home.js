@@ -83,6 +83,20 @@ function HomeScreen({ navigation }) {
           title="New to ParkHoboken? Create an account."
           onPress={() => navigation.navigate('CreateAccount')}
         /></View>
+
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
+        // color="#B26A65"
+          title="Matching Screen"
+          onPress={() => navigation.navigate('Matching')}
+        /></View>
+
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
+        // color="#B26A65"
+          title="Trip Complete Screen"
+          onPress={() => navigation.navigate('TripComplete')}
+        /></View>
   
         <TouchableOpacity>
           <Text>Forgot Password?</Text>

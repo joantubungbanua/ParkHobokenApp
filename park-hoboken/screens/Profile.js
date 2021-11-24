@@ -24,11 +24,13 @@ function ProfileScreen({ navigation }) {
           <TextInput
             placeholder="Change Password"
             placeholderTextColor="#003f5c"
+            secureTextEntry={true}
             onChangeText={(password) => changePassword(password)}
           />
         </View>
   
         <Text>Previous Trips:</Text>
+        <Text>USE FLAT LIST FROM COMPLETE TRIP SCREEN!!</Text>
         <View style={{ flex: 1, alignItems: 'left', justifyContent: 'center', borderColor:'gray', borderWidth:3, marginVertical : 10}}>
             <ScrollView>       
                 <Text>
