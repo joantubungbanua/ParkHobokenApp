@@ -29,10 +29,14 @@ import styles from './stylesheet.js';
 import { Provider } from "react-redux";
 import { store } from "./store";
 
+// Safe area context for header
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
+    // <SafeAreaProvider>...</SafeAreaProvider>
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
