@@ -78,9 +78,13 @@ function CreateAccountScreen({ navigation }) {
 
   return (
     <View style={styles.defaultView}>
+      <Image 
+        style={{width: 100, height: 100}}
+        source={require('../assets/profile_pic1.png')}
+      />
       <Text>Enter Profile Details</Text>
       {/* First name */}
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="First Name"
           placeholderTextColor="#003f5c"
@@ -89,7 +93,7 @@ function CreateAccountScreen({ navigation }) {
         />
       </View>
       {/* Car Make/Model/Color */}
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="Vehicle Make"
           placeholderTextColor="#003f5c"
@@ -97,7 +101,7 @@ function CreateAccountScreen({ navigation }) {
           value={make}
         />
       </View>
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="Vehicle Model"
           placeholderTextColor="#003f5c"
@@ -105,7 +109,7 @@ function CreateAccountScreen({ navigation }) {
           value={model}
         />
       </View>
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="Vehicle Color"
           placeholderTextColor="#003f5c"
@@ -114,7 +118,7 @@ function CreateAccountScreen({ navigation }) {
         />
       </View>
       {/* License Plate */}
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="License Plate"
           placeholderTextColor="#003f5c"
@@ -123,7 +127,7 @@ function CreateAccountScreen({ navigation }) {
         />
       </View>
       {/* Email/Password */}
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="Email"
           placeholderTextColor="#003f5c"
@@ -132,7 +136,7 @@ function CreateAccountScreen({ navigation }) {
 
         />
       </View>
-      <View>
+      <View style={styles.inputView}>
         <TextInput
           placeholder="Password"
           placeholderTextColor="#003f5c"
@@ -142,6 +146,7 @@ function CreateAccountScreen({ navigation }) {
       </View>
 
       <Button
+        color="#A74F49"
         title="Create Account"
         onPress={() => onRegisterPress()}
       />
