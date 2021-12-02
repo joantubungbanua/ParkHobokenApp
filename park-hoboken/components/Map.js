@@ -79,7 +79,7 @@ const Map = () => {
             <MapViewDirections 
               origin={origin.description}
               destination={destination.description}
-              apikey=""
+              apikey="AIzaSyALKxWILdqGOSRkqkw9zMgwvsLR27Xo2Kc"
               strokeWidth={3}
               strokeColor="red"
             
@@ -105,7 +105,7 @@ const Map = () => {
                 longitude: long,
               }}
               title="Destination"
-              description={origin.description}
+              description={destination.description}
               identifier="destination"
             />
           )}

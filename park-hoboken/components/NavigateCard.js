@@ -1,11 +1,11 @@
 import React from "react";
-import {Text, View} from "react-native";
+import {Text, View, Button} from "react-native";
 import tw from "tailwind-react-native-classnames";
 import { GOOOGLE_MAPS_APIKEY } from "@env";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { setDestination } from "../slices/navSlice";
 import { useDispatch } from "react-redux";
-import { setDestination } from "../slices/navSlice";
+import styles from '../stylesheet.js';
 
 function NavigateCard({ navigation }){
     const dispatch = useDispatch();
@@ -36,7 +36,7 @@ function NavigateCard({ navigation }){
                     enablePoweredByContainer={false}
                     minLength={2}
                     query={{
-                      key: GOOGLE_MAPS_APIKEY,
+                      key: "AIzaSyALKxWILdqGOSRkqkw9zMgwvsLR27Xo2Kc",
                       language: "en",
                     }}
                     nearbyPlacesAPI="GooglePlacesSearch"
