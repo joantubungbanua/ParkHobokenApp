@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MapView, { Marker } from "react-native-maps";
 import { StyleSheet, Text, View } from "react-native";
 import tw from "tailwind-react-native-classnames";
 import { useSelector } from "react-redux";
-import { selectOrigin } from "../slices/navSlice";
+import { selectOrigin, selectDestination } from "../slices/navSlice";
 import GetLocation from "react-native-get-location";
+import MapViewDirections from "react-native-maps-directions";
+import { useRef } from "react";
 
 // BELOW CODE IS FOR GETTING USERS LOCATION
 // CURRENTLY NOT WORKING - ONLY GETTING NULL
@@ -35,6 +37,9 @@ import GetLocation from "react-native-get-location";
 const Map = () => {
 
     const origin = useSelector(selectOrigin);
+    const destination = useSelector(selectDestination);
+    const mapRef = useRef(null);
+
     let lat, long = 0;
     // if null, start in hoboken
     if(!origin){
@@ -45,6 +50,12 @@ const Map = () => {
         long = origin.location.lng;
     }
     
+    useEffect(() => {
+      if (!origin || !destination) return;
+
+      mapRef.current.fitToSuppliedMarkers(["origin", "destination"])
+    })
+
     return (
         <MapView
           style={tw `flex-1`}
@@ -63,6 +74,18 @@ const Map = () => {
             longitudeDelta: 0.005,
           }}
         >
+
+          {origin && destination && (
+            <MapViewDirections 
+              origin={origin.description}
+              destination={destination.description}
+              apikey=""
+              strokeWidth={3}
+              strokeColor="red"
+            
+            />
+          )}
+
           {origin?.location && (
             <Marker
               coordinate={{
@@ -72,6 +95,18 @@ const Map = () => {
               title="Origin"
               description={origin.description}
               identifier="origin"
+            />
+          )}
+
+          {destination?.location && (
+            <Marker
+              coordinate={{
+                latitude: lat,
+                longitude: long,
+              }}
+              title="Destination"
+              description={origin.description}
+              identifier="destination"
             />
           )}
         </MapView>

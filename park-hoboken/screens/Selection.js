@@ -76,7 +76,7 @@ function SelectionScreen({ navigation }) {
               <Button
                 color="#A74F49"
                 title="Arriver"
-                onPress={() => navigation.navigate('Map')}
+                onPress={() => navigation.navigate('NavigateCard')}
               />
             </View>
             <View style={styles.buttonView}>
