@@ -52,8 +52,6 @@ function SelectionScreen({ navigation }) {
                         location: details.geometry.location,
                         description: data.description
                       }))
-
-                      dispatch(setDestination(null));
                     }}
                     fetchDetails={true}
                     enablePoweredByContainer={false}
@@ -84,13 +82,6 @@ function SelectionScreen({ navigation }) {
                 color="#A74F49"
                 title="Departer"
                 onPress={() => navigation.navigate('Map')}
-              />
-            </View>
-            <View style={styles.buttonView}>
-              <Button
-                color="#A74F49"
-                title="Route"
-                onPress={() => navigation.navigate('Routing')}
               />
             </View>
           </View>

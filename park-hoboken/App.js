@@ -19,7 +19,7 @@ import CreateAccountScreen from './screens/CreateAccount';
 import ProfileScreen from './screens/Profile';
 import SelectionScreen from './screens/Selection';
 import RoutingScreen from './screens/routes';
-import MapScreen from './screens/Maps';
+import MapScreen from './screens/maps';
 import MatchingScreen from './screens/Matching';
 import TripCompleteScreen from './screens/TripComplete';
 // Stylesheet

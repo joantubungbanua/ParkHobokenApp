@@ -7,6 +7,7 @@ import { selectOrigin, selectDestination } from "../slices/navSlice";
 import GetLocation from "react-native-get-location";
 import MapViewDirections from "react-native-maps-directions";
 import { useRef } from "react";
+import { GOOGLE_MAPS_APIKEY } from '@env';
 
 // BELOW CODE IS FOR GETTING USERS LOCATION
 // CURRENTLY NOT WORKING - ONLY GETTING NULL
@@ -36,81 +37,101 @@ import { useRef } from "react";
 
 const Map = () => {
 
-    const origin = useSelector(selectOrigin);
-    const destination = useSelector(selectDestination);
-    const mapRef = useRef(null);
+  const origin = useSelector(selectOrigin);
+  const destination = useSelector(selectDestination);
+  const mapRef = useRef(null);
 
-    let lat, long = 0;
-    // if null, start in hoboken
-    if(!origin){
-        lat = 40.7440;
-        long = -74.0324;
-    }else{
-        lat = origin.location.lat;
-        long = origin.location.lng;
-    }
-    
-    useEffect(() => {
-      if (!origin || !destination) return;
+  let lat, long = 0;
+  let latd, longd = 0;
+  // if null, start in hoboken
+  if (!origin) {
+    lat = 40.7440;
+    long = -74.0324;
+  } else {
+    lat = origin.location.lat;
+    long = origin.location.lng;
+  }
 
-      mapRef.current.fitToSuppliedMarkers(["origin", "destination"])
-    })
+  if (!destination) {
+    latd = 40.717495;
+    longd = -74.04411;
+  } else {
+    latd = destination.location.lat;
+    longd = destination.location.lng;
+  }
 
-    return (
-        <MapView
-          style={tw `flex-1`}
-          mapType="mutedStandard"
-          initialRegion={{
-            
+  /*
+  // Currently creating null errors
+
+  useEffect(() => {
+    if (!origin || !destination) return;
+
+    mapRef.current.fitToSuppliedMarkers(["origin", "destination"]);
+  })
+  */
+  return (
+    <MapView
+      style={tw`flex-1`}
+      ref={map => {this.map = map}}
+      //mapType="mutedStandard"
+      initialRegion={{
+
+        latitude: lat,
+        // location.latitude,
+        // 40.7440,
+        // origin.latitude.lat,
+        longitude: long,
+        // location.longitude,
+        // -74.0324,
+        // origin.longitude.lng,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+      }}
+      onMapReady={() => {this.map.fitToSuppliedMarkers(['origin','destination'],{ edgePadding: 
+        {top: 100,
+          right: 100,
+          bottom: 100,
+          left: 100}
+  
+      })}}
+    >
+
+      {origin && destination && (
+        <MapViewDirections
+          origin={origin.description}
+          destination={destination.description}
+          apikey={GOOGLE_MAPS_APIKEY}
+          strokeWidth={3}
+          strokeColor="red"
+
+        />
+      )}
+
+      {origin?.location && (
+        <Marker
+          coordinate={{
             latitude: lat,
-            // location.latitude,
-            // 40.7440,
-            // origin.latitude.lat,
             longitude: long,
-            // location.longitude,
-            // -74.0324,
-            // origin.longitude.lng,
-            latitudeDelta: 0.005,
-            longitudeDelta: 0.005,
           }}
-        >
+          title="Origin"
+          description={origin.description}
+          identifier={"origin"}
+        />
+      )}
 
-          {origin && destination && (
-            <MapViewDirections 
-              origin={origin.description}
-              destination={destination.description}
-              apikey="AIzaSyALKxWILdqGOSRkqkw9zMgwvsLR27Xo2Kc"
-              strokeWidth={3}
-              strokeColor="red"
-            
-            />
-          )}
-
-          {origin?.location && (
-            <Marker
-              coordinate={{
-                latitude: lat,
-                longitude: long,
-              }}
-              title="Origin"
-              description={origin.description}
-              identifier="origin"
-            />
-          )}
-
-          {destination?.location && (
-            <Marker
-              coordinate={{
-                latitude: lat,
-                longitude: long,
-              }}
-              title="Destination"
-              description={destination.description}
-              identifier="destination"
-            />
-          )}
-        </MapView>
-    )
+      {destination?.location && (
+        <Marker
+          coordinate={{
+            latitude: latd,
+            longitude: longd,
+          }}
+          title="Destination"
+          description={destination.description}
+          identifier={"destination"}
+        />
+      )}
+    </MapView>
+  )
 }
 
 export default Map;
