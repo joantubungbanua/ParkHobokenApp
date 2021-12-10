@@ -43,7 +43,7 @@ function MatchingScreen({ navigation }) {
         <View style={styles.defaultView}>
 
           <View style={{flex: 1, alignItems: 'center', textAlignVertical: 'top', padding: 10, width: '100%'}}>
-            &nbsp;
+            <Text>&nbsp;</Text>
             <Text style={{fontWeight: 'bold', fontSize: 30}}>Trip Complete</Text>
             <Text style={{fontWeight: 'bold', fontSize: 20}}>Rewards:</Text>
             <TripRewards/>
