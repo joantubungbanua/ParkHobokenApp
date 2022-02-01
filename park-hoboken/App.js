@@ -19,7 +19,7 @@ import CreateAccountScreen from './screens/CreateAccount';
 import ProfileScreen from './screens/Profile';
 import SelectionScreen from './screens/Selection';
 import RoutingScreen from './screens/routes';
-import MapScreen from './screens/Maps';
+import MapScreen from './screens/maps';
 import MatchingScreen from './screens/Matching';
 import TripCompleteScreen from './screens/TripComplete';
 // Stylesheet
@@ -31,6 +31,7 @@ import { store } from "./store";
 
 // Safe area context for header
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import NavigateCard from './components/NavigateCard';
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,7 @@ function App() {
           <Stack.Screen name="CreateAccount" component={CreateAccountScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Selection" component={SelectionScreen} />
+          <Stack.Screen name="NavigateCard" component={NavigateCard} />
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Routing" component={RoutingScreen} />
           <Stack.Screen name="Matching" component={MatchingScreen} />
