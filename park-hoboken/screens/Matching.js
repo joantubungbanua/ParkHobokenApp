@@ -25,6 +25,7 @@ function MatchingScreen({ navigation }) {
       <View style={styles.defaultView}>
         <View>
           <Text>Please wait while we match you with someone</Text>
+          <Text>&nbsp;</Text>
           <Loader/>
         </View>
 

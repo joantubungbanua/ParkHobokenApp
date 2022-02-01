@@ -42,11 +42,12 @@ function MatchingScreen({ navigation }) {
 
       <View style={styles.defaultView}>
 
-        <View style={{ flex: 1, alignItems: 'center', textAlignVertical: 'top', padding: 10, width: '100%' }}>
-          <Text style={{ fontWeight: 'bold', fontSize: 30 }}>Trip Complete</Text>
-          <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Rewards:</Text>
-          <TripRewards />
-        </View>
+          <View style={{flex: 1, alignItems: 'center', textAlignVertical: 'top', padding: 10, width: '100%'}}>
+            <Text>&nbsp;</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 30}}>Trip Complete</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20}}>Rewards:</Text>
+            <TripRewards/>
+          </View>
 
         <View>
           <Text>Survey questions? Unsure if needed. Maybe just put a check on the routing screen to say they parked/departed</Text>

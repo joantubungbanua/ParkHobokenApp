@@ -13,16 +13,18 @@ import {
 // Stylesheet
 import styles from '../stylesheet.js';
 import { firebase } from '../firebase/config';
+import tw from 'tailwind-react-native-classnames';
+import { Icon } from 'react-native-elements';
 
 function HomeScreen({ navigation }) {
-
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onLoginPress = () => {
+  const onLoginPress = () => { 
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword(email,password)
       .then((response) => {
         const uid = response.user.uid
         const usersRef = firebase.firestore().collection('users')
@@ -35,7 +37,7 @@ function HomeScreen({ navigation }) {
               return;
             }
             const user = firestoreDocument.data()
-            navigation.navigate('Profile', { user })
+            navigation.navigate('Profile', {user})
 
           })
           .catch(error => {
@@ -43,75 +45,74 @@ function HomeScreen({ navigation }) {
           });
 
       })
-      .catch(error => {
+      .catch(error => { 
         alert(error)
       })
   }
 
-  return (
-    <View style={styles.defaultView}>
-      <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
-      </Image>
-      {/*
-      <View style={styles.inputView}>
-        <TextInput
-          placeholder="Email."
-          placeholderTextColor="#003f5c"
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-        />
-      </View>
+    return (
+  
+      <View style={styles.defaultView}> 
 
-      <View style={styles.inputView}>
-        <TextInput
-          placeholder="Password."
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(text) => setPassword(text)}
-        />
-      </View>
-
-      <View style={styles.buttonView}>
+        <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
+        </Image>
+        <View style={styles.inputView}>
+          <TextInput
+            placeholder="Email."
+            placeholderTextColor="#003f5c"
+            onChangeText={(text) => setEmail(text)}
+            value = {email}
+          />
+        </View>
+  
+        <View style={styles.inputView}>
+          <TextInput
+            placeholder="Password."
+            placeholderTextColor="#003f5c"
+            secureTextEntry={true}
+            onChangeText={(text) => setPassword(text)}
+          />
+        </View>
+  
+        <View style={styles.buttonView}>
         <Button color="#A74F49"
           title="Login"
           onPress={() => onLoginPress()}
         /></View>
-
-      <View style={styles.buttonView}>
+  
+        <View style={styles.buttonView}>
         <Button color="#A74F49"
-          // color="#B26A65"
+        // color="#B26A65"
           title="New to ParkHoboken? Create an account."
           onPress={() => navigation.navigate('CreateAccount')}
         /></View>
 
-
-      <View style={styles.buttonView}>
-        <Button color="#A74F49" title="Profile Screen" onPress={() => navigation.navigate('Profile')} />
-      </View>
-    */}
-      <View style={styles.buttonView}>
+        <View style={styles.buttonView}>
         <Button color="#A74F49"
-          // color="#B26A65"
+        // color="#B26A65"
           title="Matching Screen"
           onPress={() => navigation.navigate('Matching')}
         /></View>
 
-      <View style={styles.buttonView}>
+        <View style={styles.buttonView}>
         <Button color="#A74F49"
-          // color="#B26A65"
+        // color="#B26A65"
           title="Trip Complete Screen"
           onPress={() => navigation.navigate('TripComplete')}
         /></View>
-      <View style={styles.buttonView}>
-        <Button color="#A74F49" title="New Trip" onPress={() => navigation.navigate('Selection')} />
+
+        <View style={styles.buttonView}>
+        <Button color="#A74F49"
+        // color="#B26A65"
+          title="Bypass Login"
+          onPress={() => navigation.navigate('Home')}
+        /></View>
+  
+        <TouchableOpacity>
+          <Text>Forgot Password?</Text>
+        </TouchableOpacity>
       </View>
-      {/*
-      <TouchableOpacity>
-        <Text>Forgot Password?</Text>
-      </TouchableOpacity>
-      */}
-    </View>
-  );
+    );
 }
 
 export default HomeScreen;
