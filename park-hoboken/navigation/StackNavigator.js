@@ -44,7 +44,7 @@ const StackNavigator = () => {
           },
         }}/>
       <Stack.Screen name="Maps" component={Maps} options={{
-          title: 'TMaps',
+          title: 'Maps',
           headerStyle: {
             backgroundColor: '#A74F49',
           },
