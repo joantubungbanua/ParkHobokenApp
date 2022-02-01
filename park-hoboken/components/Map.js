@@ -48,7 +48,7 @@ const Map = () => {
     return (
         <MapView
           style={tw `flex-1`}
-          mapType="mutedStandard"
+          mapType="standard"
           initialRegion={{
             
             latitude: lat,
