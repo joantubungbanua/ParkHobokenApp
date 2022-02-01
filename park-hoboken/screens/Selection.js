@@ -57,7 +57,7 @@ function SelectionScreen({ navigation }) {
                     enablePoweredByContainer={false}
                     minLength={2}
                     query={{
-                      key: GOOGLE_MAPS_APIKEY,
+                      key: "AIzaSyBWXPpJy9-ZMer3ahmL5wMI2UjX9NZv5C4",
                       language: "en",
                     }}
                     nearbyPlacesAPI="GooglePlacesSearch"
