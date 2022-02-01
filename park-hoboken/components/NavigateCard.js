@@ -36,7 +36,7 @@ function NavigateCard({ navigation }){
                     enablePoweredByContainer={false}
                     minLength={2}
                     query={{
-                      key: GOOOGLE_MAPS_APIKEY,
+                      key: "AIzaSyALKxWILdqGOSRkqkw9zMgwvsLR27Xo2Kc",
                       language: "en",
                     }}
                     nearbyPlacesAPI="GooglePlacesSearch"

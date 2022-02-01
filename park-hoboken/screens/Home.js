@@ -49,10 +49,10 @@ function HomeScreen({ navigation }) {
   }
 
   return (
-
     <View style={styles.defaultView}>
       <Image style={{ width: 300, height: 100 }} source={require('../assets/ParkHoboken.png')}>
       </Image>
+      {/*
       <View style={styles.inputView}>
         <TextInput
           placeholder="Email."
@@ -84,6 +84,11 @@ function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('CreateAccount')}
         /></View>
 
+
+      <View style={styles.buttonView}>
+        <Button color="#A74F49" title="Profile Screen" onPress={() => navigation.navigate('Profile')} />
+      </View>
+    */}
       <View style={styles.buttonView}>
         <Button color="#A74F49"
           // color="#B26A65"
@@ -100,10 +105,11 @@ function HomeScreen({ navigation }) {
       <View style={styles.buttonView}>
         <Button color="#A74F49" title="New Trip" onPress={() => navigation.navigate('Selection')} />
       </View>
-
+      {/*
       <TouchableOpacity>
         <Text>Forgot Password?</Text>
       </TouchableOpacity>
+      */}
     </View>
   );
 }
