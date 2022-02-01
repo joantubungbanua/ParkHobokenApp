@@ -5,43 +5,49 @@ import {
   View,
   Text,
   TextInput,
+  StyleSheet,
   TouchableOpacity,
   Image,
   ScrollView
 } from 'react-native';
 // Stylesheet
 import styles from '../stylesheet.js';
+import { firebase } from '../firebase/config';
+import Loader from '../components/Loader';
+import TripRewards from '../components/Rewards';
 import { Header } from 'react-native-elements';
 
-function ProfileScreen({ navigation }) {
-    const [password, changePassword] = useState('');
+// import { Rating, AirbnbRating } from 'react-native-ratings';
+
+// function ratingCompleted(rating) {
+//   console.log("Rating is: " + rating)
+// }
+
+function MatchingScreen({ navigation }) {
+  
     return (
       <View style={{height:'100%'}}>
         <Header
           leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' }, onPress: () => navigation.toggleDrawer() }}
-          centerComponent={{ text: 'Profile', style: { color: '#fff' } }}
+          centerComponent={{ text: 'Rewards', style: { color: '#fff' } }}
           rightComponent={{ icon: 'home', color: '#fff', onPress: () => navigation.navigate('Home') }}
           containerStyle={{
             backgroundColor: '#A74F49',
             justifyContent: 'space-around',
           }}
         />
+
         <View style={styles.defaultView}>
-          <Image 
-            style={{width: 100, height: 100}}
-            source={require('../assets/profile_pic1.png')}></Image>
-    
-          <View style={styles.inputView}>
-            <TextInput
-              placeholder="Change Password"
-              placeholderTextColor="#003f5c"
-              secureTextEntry={true}
-              onChangeText={(password) => changePassword(password)}
-            />
+
+          <View style={{flex: 1, alignItems: 'center', textAlignVertical: 'top', padding: 10, width: '100%'}}>
+            <Text>&nbsp;</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 30}}>New Rewards</Text>
+            <Text style={{fontWeight: 'bold', fontSize: 20}}>Rewards:</Text>
+            <Text><TripRewards/></Text>
           </View>
         </View>
       </View>
     );
-  }
+}
 
-  export default ProfileScreen;
+export default MatchingScreen;
