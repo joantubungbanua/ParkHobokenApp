@@ -29,7 +29,7 @@ function ProfileScreen({ navigation }) {
         <View style={styles.defaultView}>
           <Image 
             style={{width: 100, height: 100}}
-            source={require('../assets/profile_pic1.png')} />
+            source={require('../assets/profile_pic1.png')}></Image>
     
           <View style={styles.inputView}>
             <TextInput
