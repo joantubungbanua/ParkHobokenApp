@@ -15,9 +15,7 @@ import { setDestination, setOrigin } from "../slices/navSlice";
 function MapScreen({ navigation }) {
     return (
       <View>
-        <View style={tw `h-1/2`}>
-        </View>
-        <View style={tw `h-1/2`}>
+        <View style={tw `h-full`}>
           {/* Map Section */}
           <Map />
         </View>
